@@ -1,3 +1,24 @@
+### Operators
+
+* `lt` = `<`,
+* `gt` = `>`,
+* `lte` = `<=`,
+* `gte` = `>=`,
+* `eq` = `=`,
+* `ne` = `!=`,
+* `beginswith`
+* `endswith`
+* `contains`
+* `in`
+
+### Info
+All queries are based on a simple Tuple:
+```json
+ ["field", "operator", "value"]
+```
+
+Tuples are nested in a json structure, for easy parsing. See examples below for more info.
+
 ### Basic Query
 
 ```json
