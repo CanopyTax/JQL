@@ -1,5 +1,61 @@
+### Basic Query
 
+```json
+ ["birds", "eq", "Canary"]
 ```
+
+### In Array
+```json
+ ["birds", "eq", ["Canary", "Jay", "Robin"]]
+```
+
+### This AND That
+```json
+[
+ ["birds", "eq", ["Canary", "Jay", "Robin"]],
+ ["dogs", "eq", "Lab"]
+]
+```
+
+### This OR That
+```json
+{
+ "OR": [
+  		["birds", "eq", ["Canary", "Jay", "Robin"]],
+  		["dogs", "eq", "Lab"]
+	]
+}
+```
+
+### This AND (That OR TheOther)
+```json
+[
+	["birds", "eq", ["Canary", "Jay", "Robin"]],
+ 	{
+ 		"OR": [
+  			["birds", "eq", ["Canary", "Jay", "Robin"]],
+  			["dogs", "eq", "Lab"]
+		]
+	}
+]
+```
+
+### This AND That AND (TheOther OR Bob)
+```json
+[
+	["birds", "eq", ["Canary", "Jay", "Robin"]],
+	["dogs", "eq", "Lab"]
+ 	{
+ 		"OR": [
+  			["birds", "eq", ["Canary", "Jay", "Robin"]],
+  			["dogs", "eq", "Lab"]
+		]
+	}
+]
+```
+
+### Complex Example
+```json
  [
         ["mammals.A", "in", ["A", "B", "C"]],
         ["mammals.B", "in", "false"],
